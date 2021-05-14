@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Natours | Exciting tours for adventurous people</title>
+    </head>
+    <body>
+
+        <header class="header">
+            <div class="header__image">
+            </div>
+            <div class="header__logo-box">
+                <div class="header__logo-box--left">
+                    <div class="header__logo-button">
+                        <img src="img/button-insta.png" class="header__logo-button--image">
+                        <div class="header__logo-button--popup">Instagram</div>
+                    </div>
+                    <div class="header__logo-button">
+                        <img src="img/button-linkedin.png" class="header__logo-button--image">
+                        <div class="header__logo-button--popup">LinkedIn</div>
+                    </div>
+                    <div class="header__logo-button">
+                        <img src="img/button-email.png" class="header__logo-button--image">
+                        <div class="header__logo-button--popup">Email</div>
+                    </div>
+                </div>
+                <div class="header__logo-box--right">
+                    <img src="img/logo-image.png" class="header__logo-image">
+                </div>
+                <!-- <img src="img/logo-white.png" alt="Logo" class="header__logo"> -->
+            </div>
+
+            <div class="header__scroll">
+                <img src="img/scroll-down.png" class="header__scroll-image">
+            </div>
+
+            <script>
+                document.querySelector('.header__scroll-image').addEventListener('click', () => {
+                    const classElement = '.section-about .heading-secondary';
+                    const yOffset = -80; 
+                    const element = document.querySelector(classElement);
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                    window.scrollTo({top: y});
+                });
+            </script>
+            
+            <!--
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main">Outdoors</span>
+                    <span class="heading-primary--sub">is where life happens</span>
+                </h1>
+
+                <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
+            </div> -->
+        </header>
+
+        <main>
+            <section class="section-about">
+                <div class="u-center-text u-margin-bottom-small">
+                    <h2 class="heading-secondary">
+                        SOBRE MIM
+                    </h2>
+                    <!-- <div class="u-align-center u-width-title u-border-bottom-dotted"></div> -->
+                </div>
+                <div class="u-center-text u-margin-bottom-medium">
+                    <h2 class="heading-tertiary">
+                        Brasileira de 24 anos apaixonada por viajar e viver diferentes grandes momentos...
+                    </h2>
+                </div>
+                <div class="row u-margin-bottom-big">
+                    <div class="col-1-of-2">
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. 
+                        </p>
+
+                        <h3 class="heading-tertiary u-margin-bottom-small">Live adventures like you never have before</h3>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nulla deserunt voluptatum nam.      
+                        </p>
+
+                        <!-- <a href="#" class="btn-text">Learn more &rarr;</a> -->
+                    </div>
+                    <div class="col-1-of-2">
+                        <div class="composition">
+
+                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+                                 sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" 
+                                 alt="Photo 1" 
+                                 class="composition__photo composition__photo--p1" 
+                                 src="img/nat-1-large.jpg">
+                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 2" class="composition__photo composition__photo--p2" src="img/nat-2-large.jpg">
+                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 3" class="composition__photo composition__photo--p3" src="img/nat-3-large.jpg">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="u-center-text">
+                    <p class="paragraph">
+                        Concluí um curso de fotografia pela World Acadamy e atualmente estou no último ano <br>
+                        de licenciatura em Ciências da Comunicação pela Universidade Europeia.
+                    </p>
+                </div>
+            </section>
+
+            
+
+            <section class="gallery u-align-center u-margin-bottom-big">
+                <figure class="gallery__item gallery__item--1">
+                    <a href="#popup">
+                        <img src="img/gallery/1.jpg" alt="Gallery image 1" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--2">
+                    <a href="#popup">
+                        <img src="img/gallery/2.jpg" alt="Gallery image 2" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--3">
+                    <a href="#popup">
+                        <img src="img/gallery/3.jpg" alt="Gallery image 3" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--4">
+                    <a href="#popup">
+                        <img src="img/gallery/4.jpg" alt="Gallery image 4" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--5">
+                    <a href="#popup">
+                        <img src="img/gallery/5.jpg" alt="Gallery image 5" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--6">
+                    <a href="#popup">
+                        <img src="img/gallery/6.jpg" alt="Gallery image 6" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--7">
+                    <a href="#popup">
+                        <img src="img/gallery/7.jpg" alt="Gallery image 7" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--8">
+                    <a href="#popup">
+                        <img src="img/gallery/8.jpg" alt="Gallery image 8" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--9">
+                    <a href="#popup">
+                        <img src="img/gallery/9.jpg" alt="Gallery image 9" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--10">
+                    <a href="#popup">
+                        <img src="img/gallery/10.jpg" alt="Gallery image 10" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--11">
+                    <a href="#popup">
+                        <img src="img/gallery/11.jpg" alt="Gallery image 11" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--12">
+                    <a href="#popup">
+                        <img src="img/gallery/12.jpg" alt="Gallery image 12" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--13">
+                    <a href="#popup">
+                        <img src="img/gallery/13.jpg" alt="Gallery image 13" class="gallery__img">
+                    </a>
+                </figure>
+                <figure class="gallery__item gallery__item--14">
+                    <a href="#popup">
+                        <img src="img/gallery/14.jpg" alt="Gallery image 14" class="gallery__img">
+                    </a>
+                </figure>
+    
+            </section>
+            <section class="section-stories u-margin-bottom-big">
+                <div class="bg-video">
+                    <video class="bg-video__content" autoplay muted loop>
+                        <source src="img/Photographer.mp4" type="video/mp4">
+                        <!-- <source src="img/video.webm" type="video/webm"> -->
+                        Your browser is not supported!
+                    </video>
+                </div>
+
+                <div class="u-center-text u-margin-bottom-medium">
+                    <h2 class="heading-secondary">
+                        Fotografia
+                    </h2>
+                </div>
+                
+                <div class="row">
+                    <div class="story">
+                        <figure class="story__shape">
+                            <img src="img/camera1.jpg" alt="Person on a tour" class="story__img">
+                            <figcaption class="story__caption">Camera 1</figcaption>
+                        </figure>
+                        <div class="story__text">
+                            <h3 class="heading-tertiary u-margin-bottom-small">Camera 1 Model xy</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="story">
+                        <figure class="story__shape">
+                            <img src="img/camera1.jpg" alt="Person on a tour" class="story__img">
+                            <figcaption class="story__caption">Camera 2</figcaption>
+                        </figure>
+                        <div class="story__text">
+                            <h3 class="heading-tertiary u-margin-bottom-small">Camera 2 Model xz</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="u-center-text u-margin-top-huge">
+                    <a href="#" class="btn-text">Read all stories &rarr;</a>
+                </div> -->
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__image"></div>
+        </footer>
+
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__top">
+                    <a href="#nowhere" class="popup__close">&times;</a>
+                    <div class="popup__top-left" onclick="gallery.prevImage()"><</div>
+                    <div class="popup__top-right" onclick="gallery.nextImage()">></div>
+
+                    <img src="" class="popup__top-image">
+                </div>
+                <div class="popup__bottom">
+                    asdfad
+                </div>
+            </div>
+        </div>
+        <script>
+            class Gallery {
+                constructor(imagesArr){
+                    this.currentIndex = 0;
+                    this.current = undefined;
+                    this.imagesArr = imagesArr;
+                    this.imageIsOpen = false;
+                }
+
+                appendToList(element){
+                    this.imagesArr.push(element);
+                }
+
+                getImages(){
+                    return this.imagesArr;
+                }
+
+                setCurrent(element){
+                    this.current = element;
+                    this.setCurrentIndex(this.imagesArr.findIndex(el => el === this.current));
+                    this.changeImage(element);
+                }
+
+                setCurrentIndex(currentIndex){
+                    if(this.currentIndex >= 0 || this.currentIndex < this.imagesArr.length) {
+                        this.currentIndex = currentIndex;
+                    }
+                }
+
+                open() {
+                    this.imageIsOpen = true;
+                }
+
+                close() {
+                    this.imageIsOpen = false;
+                    document.querySelector('.popup__close').click();
+                }
+
+                prevImage(){
+                    if(this.currentIndex === 0) return;
+                    this.current = this.imagesArr[--this.currentIndex];
+                    this.changeImage(this.current);
+                }
+
+                nextImage() {
+                    if(this.currentIndex === this.imagesArr.length -1) return;
+                    this.current = this.imagesArr[++this.currentIndex];
+                    this.changeImage(this.current);
+                }
+
+                changeImage(newImage) {
+                    document.querySelector('.popup .popup__top-image').src = newImage;
+                }
+            }
+
+            const gallery = new Gallery([]);
+
+            document.querySelectorAll('.gallery__item')
+                .forEach(item => 
+                    item.addEventListener('click', (e) => 
+                        {   
+                            gallery.open();
+                            gallery.setCurrent(e.target.src);
+                        }
+                    )
+                );
+
+            document.querySelectorAll('.gallery__img')
+                .forEach(item => 
+                    {
+                        gallery.appendToList(item.src);
+                    }
+                );
+
+            document.addEventListener('keyup', (e) => {
+                if(e.keyCode === 27) {
+                    if(gallery.imageIsOpen) {
+                        gallery.close();
+                    }
+                }
+
+                if(e.keyCode === 37) {
+                    if(gallery.imageIsOpen) {
+                        gallery.prevImage();
+                    }
+                }
+
+                if(e.keyCode === 39) {
+                    if(gallery.imageIsOpen) {
+                        gallery.nextImage();
+                    }
+                }
+            })
+
+            document.addEventListener('load', gallery.close());
+
+            document.querySelector('.popup').addEventListener('click', gallery.close())
+            
+        </script>
+    </body>
+</html>
