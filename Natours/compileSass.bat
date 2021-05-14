@@ -1,2 +1,2 @@
-cd C:\Users\corre\OneDrive\Desktop\Natours
+cd C:\git\porftolioLara\Natours
 npm run compile:sass
