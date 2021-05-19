@@ -191,7 +191,7 @@ document.querySelector('.popup').addEventListener('click', (e) => {
 
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "/img/gallery/", true);
+xhr.open("GET", "/Natours/img/gallery/", true);
 xhr.responseType = 'document';
 xhr.onload = () => {
     if (xhr.status === 200) {
