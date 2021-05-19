@@ -189,7 +189,7 @@ document.querySelector('.popup').addEventListener('click', (e) => {
     }
 });
 
-axios.get("/img/gallery/").then((xrh) => {
+axios.get("/natours/img/gallery/").then((xrh) => {
     console.log(xrh);
     if (xrh.status === 200) {
         var elements = xrh.data;
@@ -197,7 +197,7 @@ axios.get("/img/gallery/").then((xrh) => {
             gallery.createFolder(folderName);
         });
         gallery.imagesMap.forEach((value, folder) => {
-            axios.get("/img/gallery/" + folder).then((xrh2) => {
+            axios.get("/natours/img/gallery/" + folder).then((xrh2) => {
                 if (xrh2.status === 200) {
                     var elements = xrh2.data;
                     elements.forEach(x => {
