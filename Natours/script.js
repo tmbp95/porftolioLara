@@ -189,43 +189,29 @@ document.querySelector('.popup').addEventListener('click', (e) => {
     }
 });
 
-
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "/Natours/img/gallery/", true);
-xhr.responseType = 'document';
-xhr.onload = () => {
-    if (xhr.status === 200) {
-        var elements = xhr.response.getElementsByTagName("a");
-        for (let x of elements) {
-            if (x.href.match(/\/gallery\/.*/)){
-                const folderName = x.href.replace(/.*\/gallery\//g,'');
-                gallery.createFolder(folderName);
-            }
-        }
+axios.get("/img/gallery/").then((xrh) => {
+    console.log(xrh);
+    if (xrh.status === 200) {
+        var elements = xrh.data;
+        elements.forEach(folderName => {
+            gallery.createFolder(folderName);
+        });
         gallery.imagesMap.forEach((value, folder) => {
-            const xhr2 = new XMLHttpRequest();
-            xhr2.open("GET", "/Natours/img/gallery/" + folder, true);
-            xhr2.responseType = 'document';
-
-            xhr2.onload = () => {
-                if (xhr2.status === 200) {
-                    var elements = xhr2.response.getElementsByTagName("a");
-                    for (let x of elements) {
-                        if ( x.href.match(/\.(jpe?g|png|gif)$/) ) { 
-                            gallery.appendToList(folder, x.href);
+            axios.get("/img/gallery/" + folder).then((xrh2) => {
+                if (xrh2.status === 200) {
+                    var elements = xrh2.data;
+                    elements.forEach(x => {
+                        if ( x.match(/\.(jpe?g|png|gif)$/) ) { 
+                            gallery.appendToList(folder, xrh2.config.url + "/" + x);
                         }
-                    }
+                    });
                 } else {
-                    alert('Request failed. Returned status of ' + xhr.status);
+                    alert('Request failed. Returned status of ' + xrh2.status);
                 }
                 gallery.fillGallery();
-            };
-
-            xhr2.send();
+            });
         });
     } else {
         alert('Request failed. Returned status of ' + xhr.status);
     }
-}
-
-xhr.send();
+})
