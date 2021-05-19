@@ -204,7 +204,7 @@ xhr.onload = () => {
         }
         gallery.imagesMap.forEach((value, folder) => {
             const xhr2 = new XMLHttpRequest();
-            xhr2.open("GET", "/img/gallery/" + folder, true);
+            xhr2.open("GET", "/Natours/img/gallery/" + folder, true);
             xhr2.responseType = 'document';
 
             xhr2.onload = () => {
