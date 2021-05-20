@@ -218,4 +218,4 @@ setTimeout(() => {
             waterfall('.gallery__photos');
         }
     });
-}, 1);
+}, 1000);
