@@ -40,9 +40,8 @@ class Gallery {
                     </a>
                 </div>
             `;
+            document.querySelector(`.img${this.imagesArrFiltered.length}`).addEventListener('load',() => waterfall(`.gallery__section-${folderName}`));
         });
-        setTimeout(() => waterfall(`.gallery__section-${folderName}`), 200);
-
 
         document.querySelectorAll('.gallery__item')
             .forEach(item => 
