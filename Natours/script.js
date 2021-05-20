@@ -216,7 +216,7 @@ setTimeout(() => {
         if(imgs.isDone()) {
             document.querySelector('.gallery__photos').style.display = 'block';
             waterfall('.gallery__photos');
-            document.querySelector('.spinner').style.visibility = 'hidden';
+            document.querySelector('.spinner').style.display = 'none';
         }
     });
 }, 1000);
