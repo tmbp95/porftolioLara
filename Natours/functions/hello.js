@@ -3,7 +3,7 @@ exports.handler = async function(event, context) {
 
     let folders = [];
     let mapFolder = [];
-    let results = await axios.get("http://127.0.0.1:8080/img/gallery/");
+    let results = await axios.get(url + "/img/gallery/");
     folders = results.data;
 
     let resultingFolders = await method(folders);
@@ -28,7 +28,7 @@ const method = async function(folders) {
     let mapFolder = [];
 
     for(let i = 0; i < folders.length; i++){
-        let result = axios.get("http://127.0.0.1:8080/img/gallery/" + folders[i]);
+        let result = axios.get(url + "/img/gallery/" + folders[i]);
         result = await result;
         mapFolder.push(result.data);
     }
