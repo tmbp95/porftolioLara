@@ -4,4 +4,4 @@
         Access-Control-Allow-Origin = "*"
 
 [functions]
-  directory = "my_functions"
+  directory = "functions"
