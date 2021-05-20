@@ -1,16 +1,21 @@
 const axios = require("axios");
 
-let url = "";
+const fs = require("fs");
+
+
+
+let url = ".";
 exports.handler = async function(event, context) {
 
+    const files = fs.readdirSync('./img/gallery/');
     let folders = [];
     let mapFolder = [];
-    let results = await axios.get(url + "/img/gallery/");
-    folders = results.data;
-
-    let resultingFolders = await method(folders);
-    resultingFolders.forEach((a, index) => {
-        mapFolder.push({folderName: folders[index], data: a});
+    files.forEach((folder) => {
+        let results = fs.readdirSync('./img/gallery/' + folder);
+        folders.push(results);
+    });
+    folders.forEach((a, index) => {
+        mapFolder.push({folderName: files[index], data: a});
     })
 
     return {
@@ -19,7 +24,7 @@ exports.handler = async function(event, context) {
             'Access-Control-Allow-Credentials': true
         },
         statusCode: 200,
-        body: JSON.stringify({message: folders, folders: 1})
+        body: JSON.stringify({message: files, folders: mapFolder})
     }
 }
 
