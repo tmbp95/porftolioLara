@@ -3,7 +3,5 @@
     [headers.values]
         Access-Control-Allow-Origin = "*"
 
-[build]
-command = 'npm start'
-functions = 'functions'
-publish = 'build'
+[functions]
+  directory = "my_functions"
