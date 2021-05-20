@@ -1,4 +1,6 @@
 const axios = require("axios");
+
+let url = "https://relaxed-stonebraker-9ab4c0.netlify.app/natours";
 exports.handler = async function(event, context) {
 
     let folders = [];
