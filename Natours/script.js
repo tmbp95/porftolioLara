@@ -189,40 +189,31 @@ document.querySelector('.popup').addEventListener('click', (e) => {
     }
 });
 
+let url = "https://relaxed-stonebraker-9ab4c0.netlify.app/natours/";
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "/img/gallery/", true);
-xhr.responseType = 'document';
+xhr.open("GET", url + "/.netlify/functions/hello", true);
+xhr.responseType = 'json';
 xhr.onload = () => {
     if (xhr.status === 200) {
-        var elements = xhr.response.getElementsByTagName("a");
-        for (let x of elements) {
-            if (x.href.match(/\/gallery\/.*/)){
-                const folderName = x.href.replace(/.*\/gallery\//g,'');
-                gallery.createFolder(folderName);
-            }
-        }
-        gallery.imagesMap.forEach((value, folder) => {
-            const xhr2 = new XMLHttpRequest();
-            xhr2.open("GET", "/img/gallery/" + folder, true);
-            xhr2.responseType = 'document';
+        console.log(xhr)
 
-            xhr2.onload = () => {
-                if (xhr2.status === 200) {
-                    var elements = xhr2.response.getElementsByTagName("a");
-                    for (let x of elements) {
-                        if ( x.href.match(/\.(jpe?g|png|gif)$/) ) { 
-                            gallery.appendToList(folder, x.href);
-                        }
-                    }
-                } else {
-                    alert('Request failed. Returned status of ' + xhr.status);
-                }
-                gallery.fillGallery();
-            };
+        var folders = xhr.response.message;
+        var foldersMap = xhr.response.folders;
 
-            xhr2.send();
-        });
+        console.log(folders);
+
+        folders.forEach(folder => {
+            gallery.createFolder(folder);
+        })
+
+        foldersMap.forEach(folderMap => {
+            folderMap.data.forEach(imageSrc => {
+                gallery.appendToList(folderMap.folderName, '/img/gallery/' + folderMap.folderName + '/' + imageSrc);
+            })
+        })
+
+        gallery.fillGallery();
     } else {
         alert('Request failed. Returned status of ' + xhr.status);
     }
