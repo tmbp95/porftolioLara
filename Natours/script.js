@@ -36,10 +36,11 @@ class Gallery {
             document.querySelector(`.gallery__section-${folderName}`).innerHTML += `
                 <div class="item gallery__item">
                     <a href="#popup">
-                        <img src="${element}" alt="Gallery image 1" class="gallery__img img${this.imagesArrFiltered.length}" onload="waterfall('.gallery}')">
+                        <img src="${element}" alt="Gallery image 1" class="gallery__img img${this.imagesArrFiltered.length}" onload="waterfall('.gallery__section-${folderName}')">
                     </a>
                 </div>
             `;
+            waterfall(`.gallery__section-${folderName}`);
             // document.querySelector(`.img${this.imagesArrFiltered.length}`).addEventListener('load',() => waterfall(`.gallery__section-${folderName}`));
         });
 
