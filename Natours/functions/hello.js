@@ -1,10 +1,5 @@
-const axios = require("axios");
-
 const fs = require("fs");
 
-
-
-let url = ".";
 exports.handler = async function(event, context) {
 
     const files = fs.readdirSync('./img/gallery/');
@@ -26,16 +21,4 @@ exports.handler = async function(event, context) {
         statusCode: 200,
         body: JSON.stringify({message: files, folders: mapFolder})
     }
-}
-
-const method = async function(folders) {
-    let mapFolder = [];
-
-    for(let i = 0; i < folders.length; i++){
-        let result = axios.get(url + "/img/gallery/" + folders[i]);
-        result = await result;
-        mapFolder.push(result.data);
-    }
-
-    return mapFolder;
 }
