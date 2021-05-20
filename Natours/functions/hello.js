@@ -15,12 +15,11 @@ exports.handler = async function(event, context) {
 
     return {
         headers: {
-            'Accept':'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true
         },
         statusCode: 200,
-        body: JSON.stringify({message: folders, folders: mapFolder})
+        body: JSON.stringify({message: folders, folders: 1})
     }
 }
 

@@ -770,7 +770,7 @@ body {
   .footer__image {
     width: 100%;
     height: 100%;
-    background: linear-gradient(#f7f7f7, transparent 40%), url(../../Natours/img/footer-image.jpg);
+    background: linear-gradient(#f7f7f7, transparent 40%), url(../../img/footer-image.jpg);
     background-size: cover;
     background-position: bottom; }
   @media only screen and (max-width: 56.25em) {
@@ -867,7 +867,7 @@ body {
   .header__image {
     width: 90%;
     height: 90%;
-    background: linear-gradient(transparent 70%, #f7f7f7), url(../../Natours/img/main-image.jpg);
+    background: linear-gradient(transparent 70%, #f7f7f7), url(../../img/main-image.jpg);
     background-size: cover;
     background-position: center; }
   .header__logo-box {
