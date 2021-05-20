@@ -1,4 +1,3 @@
-
 class Gallery {
     constructor(imagesArr){
         this.currentIndex = 0;
@@ -11,7 +10,7 @@ class Gallery {
 
     clearGallery() {
         this.imagesArrFiltered = [];
-        document.querySelectorAll(`.gallery__section`).forEach(elem => elem.remove());
+        document.querySelectorAll(`.gallery__item`).forEach(elem => elem.remove());
         document.querySelectorAll(`.gallery__nav-list--item:not([data-folderName="All"])`).forEach(elem => elem.remove());
 
         document.querySelector('.gallery__nav-list--item[data-folderName="All"]').classList.remove('gallery__nav-list--item-active');
@@ -19,7 +18,7 @@ class Gallery {
     }
 
     fillGallery() {
-        if(document.querySelectorAll(`.gallery__section`).length){
+        if(document.querySelectorAll(`.gallery__item`).length){
             this.clearGallery();
         }
         this.imagesMap.forEach((value, folderName) => {
@@ -33,15 +32,13 @@ class Gallery {
     appendListToGallery(folderName){
         this.imagesMap.get(folderName).forEach(element => {
             this.imagesArrFiltered.push(element);
-            document.querySelector(`.gallery__section-${folderName}`).innerHTML += `
+            document.querySelector(`.gallery__photos`).innerHTML += `
                 <div class="item gallery__item">
                     <a href="#popup">
-                        <img src="${element}" alt="Gallery image 1" class="gallery__img img${this.imagesArrFiltered.length}" onload="waterfall('.gallery__section-${folderName}')">
+                        <img src="${element}" alt="Gallery image 1" class="gallery__img img${this.imagesArrFiltered.length}">
                     </a>
                 </div>
             `;
-            waterfall(`.gallery__section-${folderName}`);
-            // document.querySelector(`.img${this.imagesArrFiltered.length}`).addEventListener('load',() => waterfall(`.gallery__section-${folderName}`));
         });
 
         document.querySelectorAll('.gallery__item')
@@ -77,9 +74,9 @@ class Gallery {
         if(!this.imagesMap.has(folderName)){
             this.imagesMap.set(folderName, []);
         }
-        document.querySelector('.gallery').innerHTML += `
-            <section class="gallery__section gallery__section-${folderName}"></section>
-        `;
+        // document.querySelector('.gallery').innerHTML += `
+        //     <section class="gallery__section gallery__section-${folderName}"></section>
+        // `;
     }
 
     addFilters(){
@@ -143,7 +140,7 @@ class Gallery {
 
     changeImage(newImage) {
         document.querySelector('.popup .popup__top-image').src = newImage;
-        const folderName = this.findFolderByImage(newImage);
+        const folderName = this.findFolderByImage(newImage.replace(/.*\/img/g,"/img"));
         this.setDescription(folderName);
     }
 
@@ -212,3 +209,12 @@ xhr.onload = () => {
 }
 
 xhr.send(); 
+
+setTimeout(() => {
+    imgStatus.watch('.gallery__img', function(imgs){
+        console.log(imgs.isDone()); // If already load OR fail every image (Type: boolean)
+        if(imgs.isDone()) {
+            waterfall('.gallery__photos');
+        }
+    });
+}, 500);
