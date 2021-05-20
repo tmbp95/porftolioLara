@@ -39,6 +39,7 @@ class Gallery {
                     </a>
                 </div>
             `;
+            waterfall('.gallery__photos');
         });
 
         document.querySelectorAll('.gallery__item')
