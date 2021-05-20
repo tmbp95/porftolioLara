@@ -193,22 +193,13 @@ document.querySelector('.popup').addEventListener('click', (e) => {
 let url = "";
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", url + "/.netlify/functions/hello", true);
+xhr.open("GET", url + "/files.json", true);
 xhr.responseType = 'json';
 xhr.onload = () => {
     if (xhr.status === 200) {
-        console.log(xhr)
-
-        var folders = xhr.response.message;
-        var foldersMap = xhr.response.folders;
-
-        console.log(folders);
-
-        folders.forEach(folder => {
-            gallery.createFolder(folder);
-        })
-
+        const foldersMap = xhr.response.mapFolders;
         foldersMap.forEach(folderMap => {
+            gallery.createFolder(folderMap.folderName);
             folderMap.data.forEach(imageSrc => {
                 gallery.appendToList(folderMap.folderName, '/img/gallery/' + folderMap.folderName + '/' + imageSrc);
             })
@@ -216,7 +207,7 @@ xhr.onload = () => {
 
         gallery.fillGallery();
     } else {
-        alert('Request failed. Returned status of ' + xhr.status);
+        alert('Request failed. Please refresh the page');
     }
 }
 

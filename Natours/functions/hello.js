@@ -2,7 +2,7 @@ const fs = require("fs");
 
 exports.handler = async function(event, context) {
 
-    const files = fs.readdirSync('./img/gallery/');
+    const files = fs.readdirSync('./img/gallery');
     let folders = [];
     let mapFolder = [];
     files.forEach((folder) => {
@@ -19,6 +19,6 @@ exports.handler = async function(event, context) {
             'Access-Control-Allow-Credentials': true
         },
         statusCode: 200,
-        body: JSON.stringify({message: files, folders: mapFolder})
+        body: JSON.stringify({folders: mapFolder})
     }
 }
