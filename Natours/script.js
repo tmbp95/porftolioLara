@@ -216,6 +216,7 @@ setTimeout(() => {
         if(imgs.isDone()) {
             document.querySelector('.gallery__photos').style.visibility = 'visible';
             waterfall('.gallery__photos');
+            document.querySelector('.spinner').style.visibility = 'hidden';
         }
     });
 }, 1000);
