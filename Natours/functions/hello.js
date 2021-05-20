@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-let url = "natours";
+let url = "/natours";
 exports.handler = async function(event, context) {
 
     let folders = [];
