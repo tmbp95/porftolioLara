@@ -275,7 +275,7 @@ body {
       z-index: 20;
       opacity: 1; }
   .gallery__photos {
-    visibility: hidden; }
+    display: none; }
 
 .bg-video {
   position: absolute;

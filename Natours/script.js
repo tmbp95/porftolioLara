@@ -214,7 +214,7 @@ setTimeout(() => {
     imgStatus.watch('.gallery__img', function(imgs){
         console.log(imgs.isDone()); // If already load OR fail every image (Type: boolean)
         if(imgs.isDone()) {
-            document.querySelector('.gallery__photos').style.visibility = 'visible';
+            document.querySelector('.gallery__photos').style.display = 'block';
             waterfall('.gallery__photos');
             document.querySelector('.spinner').style.visibility = 'hidden';
         }
