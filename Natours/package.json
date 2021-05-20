@@ -39,5 +39,13 @@
     "axios": "^0.21.1",
     "fetch": "^1.1.0",
     "node-sass": "^6.0.0"
+  },
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:8080",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
   }
 }
