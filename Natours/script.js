@@ -217,4 +217,4 @@ setTimeout(() => {
             waterfall('.gallery__photos');
         }
     });
-}, 500);
+}, 1);
