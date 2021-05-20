@@ -221,14 +221,3 @@ xhr.onload = () => {
 }
 
 xhr.send();
-
-const files = fs.readdirSync('./img/gallery/');
-    let folders = [];
-    let mapFolder = [];
-    files.forEach((folder) => {
-        let results = fs.readdirSync('./img/gallery/' + folder);
-        folders.push(results);
-    });
-    folders.forEach((a, index) => {
-        mapFolder.push({folderName: files[index], data: a});
-    })
