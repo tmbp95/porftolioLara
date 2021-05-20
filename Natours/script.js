@@ -189,7 +189,7 @@ document.querySelector('.popup').addEventListener('click', (e) => {
     }
 });
 
-let url = "https://relaxed-stonebraker-9ab4c0.netlify.app/natours/";
+let url = "";
 
 const xhr = new XMLHttpRequest();
 xhr.open("GET", url + "/.netlify/functions/hello", true);
