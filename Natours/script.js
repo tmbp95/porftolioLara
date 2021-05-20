@@ -172,7 +172,7 @@ document.addEventListener('keyup', (e) => {
     }
 });
 
-// document.addEventListener('load', gallery.close());
+document.addEventListener('load', gallery.close());
 
 document.querySelector('.popup__buttons-prev').addEventListener('click', (e) => {
     gallery.prevImage()

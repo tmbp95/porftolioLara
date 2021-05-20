@@ -123,4 +123,76 @@
             }
         }
     }
+
+    &__more{
+        position: absolute;
+        width: 40rem;
+        height: 12rem;
+        background: linear-gradient(
+        transparent 70%,
+        rgba($color-grey-light-1, 1)
+        ), rgba($color-grey-dark-1, 0.3);
+        top: 80vh;
+        right: 12vw;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+
+        &-award{
+            width: 10rem;
+            height: 10rem;
+            background: rgba(white, 0.8);
+            border-radius: 10px;
+            margin: 10px;
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            &:hover + &--medal{
+                opacity: 1;
+            }
+
+            &--image{
+                width: 10rem;
+                height: 10rem;
+            }
+
+            &--medal{
+                height: 6rem;
+                position: relative;
+                left: -5rem;
+                top: 4rem;
+                opacity: 0.8;
+                animation: opacity 0.2s;
+
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-awardInfo{
+            flex-shrink: 10;
+            height: 6rem;
+            position: relative;
+            left: -6rem;
+            color: $color-grey-dark-3;
+        }
+
+        &-link{
+            color: $color-grey-dark-4;
+            text-decoration: none;
+            position: absolute;
+            bottom: 0.8rem;
+            right: 2rem;
+
+            &:hover{
+                color: $color-primary-dark;
+            }
+        }
+    }
 }
