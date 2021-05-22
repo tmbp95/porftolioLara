@@ -35,10 +35,13 @@ class Gallery {
             document.querySelector(`.gallery__photos`).innerHTML += `
                 <div class="item gallery__item">
                     <a href="#popup">
-                        <img src="${element}" alt="Gallery image 1" class="gallery__img img${this.imagesArrFiltered.length}">
+                        <img data-src="${element}" src="${element}" alt="Gallery image 1" class="lazy gallery__img img${this.imagesArrFiltered.length}">
                     </a>
                 </div>
             `;
+            var myLazyLoad = new LazyLoad();
+            // After your content has changed...
+            myLazyLoad.update();
             waterfall('.gallery__photos');
         });
 
@@ -195,7 +198,7 @@ xhr.open("GET", url + "/files.json", true);
 xhr.responseType = 'json';
 xhr.onload = () => {
     if (xhr.status === 200) {
-        const foldersMap = xhr.response.mapFolders;
+        const foldersMap = xhr.response.folders;
         foldersMap.forEach(folderMap => {
             gallery.createFolder(folderMap.folderName);
             folderMap.data.forEach(imageSrc => {
