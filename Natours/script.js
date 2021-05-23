@@ -35,7 +35,7 @@ class Gallery {
             document.querySelector(`.gallery__photos`).innerHTML += `
                 <div class="item gallery__item">
                     <a href="#popup">
-                        <img data-src="${element}" src="${element}" alt="Gallery image 1" class="lazy gallery__img img${this.imagesArrFiltered.length}">
+                        <img data-src="${element}" src="${element.replace(folderName,folderName + "/LowRes")}" alt="Gallery image 1" class="lazy gallery__img img${this.imagesArrFiltered.length}">
                     </a>
                 </div>
             `;
@@ -111,7 +111,7 @@ class Gallery {
 
     setCurrent(element){
         this.current = element;
-        this.setCurrentIndex(this.imagesArrFiltered.findIndex(el => el === this.current));
+        this.setCurrentIndex(this.imagesArrFiltered.findIndex(el => el === this.current.replace(/.*\/img/g,"/img")));
         this.changeImage(element);
     }
 
@@ -145,6 +145,7 @@ class Gallery {
     changeImage(newImage) {
         document.querySelector('.popup .popup__top-image').src = newImage;
         const folderName = this.findFolderByImage(newImage.replace(/.*\/img/g,"/img"));
+        console.log(folderName)
         this.setDescription(folderName);
     }
 

@@ -6,7 +6,7 @@ exports.handler = async function(event, context) {
     let folders = [];
     let mapFolder = [];
     files.forEach((folder) => {
-        let results = fs.readdirSync('./img/gallery/' + folder);
+        let results = fs.readdirSync('./img/gallery/' + folder).filter(result => (/\./).test(result));
         folders.push(results);
     });
     folders.forEach((a, index) => {
