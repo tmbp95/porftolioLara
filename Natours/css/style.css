@@ -849,7 +849,11 @@ body {
     .story {
       width: 100%;
       padding: 4rem;
-      padding-left: 7rem; } }
+      padding-left: 7rem; }
+      @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        .story {
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -915,7 +919,7 @@ body {
     background-position: bottom; }
   @media only screen and (max-width: 56.25em) {
     .footer {
-      padding: 8rem 0; } }
+      padding: 8rem 0 0 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
@@ -1302,7 +1306,7 @@ body {
   margin-top: -40vh; }
   @media only screen and (max-width: 56.25em) {
     .section-awards {
-      padding: 20rem 2rem; } }
+      padding: 33rem 2rem 0 2rem; } }
 
 .section-stories {
   padding: 5rem 0 10rem 0;
