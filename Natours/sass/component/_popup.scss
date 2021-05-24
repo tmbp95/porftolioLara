@@ -33,6 +33,11 @@
         transition: all 0.4s 0.2s;
         display: flex;
         flex-direction: column;
+
+        @include respond(tab-port){
+            height: auto;
+            max-height: 90%;
+        }
     }
 
     &__top{
@@ -47,6 +52,11 @@
         &-image{
             height: 100%;
             order: 2;
+            @include respond(tab-port){
+                height: auto;
+                max-height: 90%;
+                width: 90vw;
+            }
         }
     }
 
@@ -100,6 +110,11 @@
             text-decoration: none;
             line-height: 1;
             transition: all 0.2s;
+
+            @include respond(tab-port){
+                font-size: 5rem;
+
+            }
         }
 
         &:hover{
@@ -119,10 +134,32 @@
 
         &-prev{
             margin-left: 5.5rem;
+            @include respond(tab-port){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 4rem;
+                background-color: rgba($color-white, 0.4);
+                border-radius: 50%;
+                margin-left:4rem;
+                z-index: 9;
+            }
         }
+        
     
         &-next{
             margin-right: 5.5rem;
+
+            @include respond(tab-port){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 4rem;
+                background-color: rgba($color-white, 0.4);
+                border-radius: 50%;
+                margin-right:4rem;
+                z-index: 9;
+            }
         }
 
         &:hover{

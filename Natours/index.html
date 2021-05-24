@@ -64,9 +64,9 @@
                 </div>
                 <img src="img/award.png" class="header__more-award--medal">
                 <div class="header__more-awardInfo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nulla deserunt voluptatum nam
+                    Premiada no concurso Secreta Vida das Palavras. etc etc
                 </div>
-                <a href="#dndf" class="header__more-link">saber mais...</a>
+                <a href="#awards" class="header__more-link">saber mais...</a>
             </div>
             
             <!--
@@ -110,13 +110,13 @@
                     <div class="col-1-of-2">
                         <div class="composition">
 
-                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+                            <img srcset="img/photographer1.jpeg 300w, img/photographer1.jpeg 1000w" 
                                  sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" 
                                  alt="Photo 1" 
                                  class="composition__photo composition__photo--p1" 
-                                 src="img/nat-1-large.jpg">
-                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 2" class="composition__photo composition__photo--p2" src="img/nat-2-large.jpg">
-                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 3" class="composition__photo composition__photo--p3" src="img/nat-3-large.jpg">
+                                 src="img/photographer1.jpeg">
+                            <img srcset="img/photographer2.jpeg 300w, img/photographer2.jpeg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 2" class="composition__photo composition__photo--p2" src="img/photographer2.jpeg">
+                            <img srcset="img/photographer3.jpeg 300w, img/photographer3.jpeg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 3" class="composition__photo composition__photo--p3" src="img/photographer3.jpeg">
 
                         </div>
                     </div>
@@ -153,10 +153,11 @@
 
                 
             </section>
-            <section class="section-stories u-margin-bottom-big">
+            <section class="section-stories u-margin-bottom-medium">
                 <div class="bg-video">
-                    <video class="bg-video__content" autoplay muted loop>
-                        <source src="img/Photographer.mp4" type="video/mp4">
+                    <video class="bg-video__content" autoplay muted loop style="object-fit:cover;
+                    object-position: center center;">
+                        <source src="img/Photographer2.mp4" type="video/mp4">
                         <!-- <source src="img/video.webm" type="video/webm"> -->
                         Your browser is not supported!
                     </video>
@@ -204,12 +205,42 @@
             </section>
         </main>
 
+        <section class="section-awards" id="awards">
+            <div class="u-center-text u-margin-bottom-medium">
+                <h2 class="heading-secondary">
+                    Prémios
+                </h2>
+                <!-- <div class="u-align-center u-width-title u-border-bottom-dotted"></div> -->
+            </div>
+
+            <div class="row u-margin-bottom-big">
+                    <div class="awards">
+                        <div class="col-1-of-2">
+                            <div class="awards__photo">
+                                <img class="awards__photo-image" src="img/LaraLiraSecretaVidaDasPalavras.jpeg">
+                            </div>
+                        </div>
+                        <div class="col-1-of-2">
+                            <div class="awards__description">
+                                <h3 class="heading-tertiary u-margin-bottom-medium">Secreta Vida das Palavras</h3>
+                                <p class="paragraph">
+                                    Uma dos 10 vencedores do concurso de fotografia - Secreta Vida das Palavras. 
+                                    A fotografia foi eleita pelo júri... etc etc
+                                </p>
+                                <a class="btn-text" target="_blank" href="https://apalavra.pt/796/map-oeiras/secreta-vida-das-palavras-divulgadas-as-fotografias-eleitas-pelo-juri/?fbclid=IwAR3cneDxiFSW3cCxtbzkBHdmU_6LGr6V7vIyvTbfTjkWbD9tXZAfk-Ws1CE">Saber mais...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <footer class="footer">
             <div class="footer__image"></div>
         </footer>
 
         <div class="popup" id="popup">
-            <a href="#nowhere" class="popup__close">&times;</a>
+            <a href="#LaraLira" class="popup__close">&times;</a>
             <div class="popup__buttons popup__buttons-prev"><</div>
             <div class="popup__buttons popup__buttons-next">></div>
             <div class="popup__content">

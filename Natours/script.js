@@ -49,7 +49,6 @@ class Gallery {
             .forEach(item => 
                 item.addEventListener('click', (e) => 
                     {   
-                        console.log(e.target.src)
                         gallery.open();
                         gallery.setCurrent(e.target.src);
                     }
@@ -145,7 +144,6 @@ class Gallery {
     changeImage(newImage) {
         document.querySelector('.popup .popup__top-image').src = newImage;
         const folderName = this.findFolderByImage(newImage.replace(/.*\/img/g,"/img"));
-        console.log(folderName)
         this.setDescription(folderName);
     }
 
@@ -217,7 +215,6 @@ xhr.send();
 
 setTimeout(() => {
     imgStatus.watch('.gallery__img', function(imgs){
-        console.log(imgs.isDone()); // If already load OR fail every image (Type: boolean)
         if(imgs.isDone()) {
             document.querySelector('.gallery__photos').style.display = 'block';
             waterfall('.gallery__photos');

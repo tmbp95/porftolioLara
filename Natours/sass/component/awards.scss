@@ -1,0 +1,25 @@
+.awards{
+    &__photo{
+        &-image{
+            width: 100%;
+            box-shadow: 0 1.5rem 2rem $color-shadow-high;
+            border-radius: 2px;
+            outline-offset: 2rem;
+            transition: all 0.2s;
+
+            &:hover{
+                transform: scale(1.05) translateY(-0.5rem);
+                box-shadow: 0 1.5rem 1.5rem $color-shadow-very-high;
+                z-index: 20;
+            }
+        }
+    }
+
+    &__description{
+        position: relative;
+
+        & .paragraph{
+            font-size: 1.4rem;
+        }
+    }
+}

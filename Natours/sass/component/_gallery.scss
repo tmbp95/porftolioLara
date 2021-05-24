@@ -1,15 +1,38 @@
 .gallery{
-    width: 70%;
+    width: 80%;
+
+    @include respond(phone){
+        width: 100%;
+    }
 
     &__item{
         width: 19.5%;
-        padding: 2px;
+        padding: 4px;
+
+        @include respond(tab-port){
+            width: 30%;
+            padding: 2px;
+        }
+
+        @include respond(phone){
+            &:nth-of-type(odd){
+                margin-left: 1%;
+            }
+            &:nth-of-type(2n){
+                margin-left: 0.5%;
+            }
+            width: 48%;
+        }
     }
 
     &__nav{
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include respond(tab-port){
+            margin-top: -5rem;
+        }
 
         &-list{
             list-style-type: none;
@@ -48,6 +71,7 @@
         object-fit: cover;
         display: block;
         opacity: 0.9;
+        
 
         &:hover{
             outline: 0.1rem solid $color-grey-dark-2;

@@ -17,6 +17,11 @@
     //     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     // }
 
+    @include respond(tab-port){
+        width: 100%;
+        display: block;
+    }
+
     &__image{
         width: 90%;
         height: 90%;
@@ -27,6 +32,17 @@
         url(../../img/main-image.jpg);
         background-size: cover;
         background-position: center;
+
+        @include respond(tab-port){
+            width: 100%;
+            background: linear-gradient(
+            transparent 70%,
+            rgba($color-grey-light-1, 1)
+            ), 
+            url(../../img/main-imageMob.jpg);
+            background-size: cover;
+            background-position: center;
+        }
     }
 
     &__logo-box{
@@ -36,6 +52,10 @@
         display: flex;
         top: 8rem;
         left: -4rem;
+
+        @include respond(tab-port){
+            position: absolute;
+        }
 
         &--left{
             width: 4rem;
@@ -74,6 +94,9 @@
         &--image{
             width: 2rem;
             height: 1.91rem;
+            @include respond(tab-port){
+                transform: rotate(90deg);
+            }
         }
 
         &--image:hover ~ &--popup{
@@ -111,6 +134,10 @@
         justify-content: center;
         align-items: center;
 
+        @include respond(tab-port){
+            display: none;
+        } 
+
         &-image{
             width: 5.5rem;
             height: 6rem;
@@ -130,8 +157,8 @@
         height: 12rem;
         background: linear-gradient(
         transparent 70%,
-        rgba($color-grey-light-1, 1)
-        ), rgba($color-grey-dark-1, 0.3);
+        rgba($color-grey-light-1, 0.8)
+        ), rgba($color-grey-dark-1, 0.2);
         top: 80vh;
         right: 12vw;
         display: flex;
@@ -139,6 +166,13 @@
         border-radius: 10px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
+
+        @include respond(tab-port){
+            top: 65vh;
+            background: grey;
+            border-bottom-left-radius:10px;
+            border-bottom-right-radius: 10px;
+        }
 
         &-award{
             width: 10rem;
@@ -176,6 +210,7 @@
         }
 
         &-awardInfo{
+            font-size: 1.2rem;
             flex-shrink: 10;
             height: 6rem;
             position: relative;
@@ -184,7 +219,8 @@
         }
 
         &-link{
-            color: $color-grey-dark-4;
+            color: $color-grey-dark-2;
+            font-size: 1.2rem;
             text-decoration: none;
             position: absolute;
             bottom: 0.8rem;
