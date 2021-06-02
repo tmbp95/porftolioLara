@@ -2,7 +2,7 @@
     position: relative;
 
     &__photo{
-        width: 30%;
+        width: 25%;
         box-shadow: 0 1.5rem 4rem $color-shadow-high;
         border-radius: 2px;
         position: absolute;
@@ -13,13 +13,13 @@
         @include respond(tab-port){
             float: left;
             position: relative;
-            width: 30.33333333%;
+            width: 25.33333333%;
             box-shadow: 0 1.5rem 3rem $color-shadow-medium;
         }
 
         &--p1{
             left: 20%;
-            top: -2rem;
+            top: -3rem;
 
             @include respond(tab-port){
                 left: 0%;
@@ -30,7 +30,7 @@
 
         &--p2{
             right: 10%;
-            top: 3rem;
+            top: -1rem;
 
             @include respond(tab-port){
                 left: 5%;
@@ -40,8 +40,8 @@
         }
 
         &--p3{
-            left: 40%;
-            top: 10rem;
+            left: 43%;
+            top: 3rem;
 
             @include respond(tab-port){
                 top: 0;

@@ -91,6 +91,11 @@
         z-index: 20;
         display: flex;
 
+        & a{
+            text-decoration: none;
+        }
+
+
         &--image{
             width: 2rem;
             height: 1.91rem;

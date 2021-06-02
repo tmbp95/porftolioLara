@@ -1,27 +1,98 @@
 .story{
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
     box-shadow: 0 3rem 6rem $color-grey-dark-2;
     background-color: rgba($color-white, 0.6);
     border-radius: 3px;
-    padding: 3rem;
-    padding-left: 7rem;
+    padding: 2rem;
+    padding-left: 6rem;
     font-size: $default-font-size;
-    
-    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    display: flex;
+
+    &-s{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        margin-top: 2rem;
     }
+
+    &-small{
+        width: 30%;
+        margin: 0 auto;
+        box-shadow: 0 3rem 6rem $color-grey-dark-2;
+        background-color: rgba($color-white, 0.6);
+        border-radius: 3px;
+        padding: 2rem;
+        padding-left: 6rem;
+        font-size: $default-font-size;
+        display: flex;
+        align-items: center;
+
+        @include respond(tab-port){
+            width: 48%;
+            padding: 2rem;
+            padding-left: 5rem;
+    
+            // @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+            //     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            //     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            // }
+        }
+
+        &__shape{
+            width: 8rem;
+            height: 8rem;
+            background: red;
+            float:left;
+            position: relative;
+            left: -4rem;
+        }
+    
+        &__img{
+            background-position: center center;
+            width: 8rem;
+            height: 8rem;
+            transition: all 0.5s;
+            backface-visibility: hidden;
+        }
+    
+        &__text{
+            left:-1rem;
+            @include respond(phone){
+                transform: skewX(0);
+            }
+        }
+    
+        &__caption{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 20%);
+            color: $color-white;
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.5s;
+            backface-visibility: hidden;
+        }
+
+    }
+    // @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+    //     -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    //     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    // }
 
     @include respond(tab-port){
         width: 100%;
-        padding: 4rem;
-        padding-left: 7rem;
+        padding: 2rem;
+        padding-left: 5rem;
 
-        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
+        // @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+        //     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        //     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        // }
     }
 
     &__shape{
@@ -54,7 +125,9 @@
     }
 
     &__text{
-
+        position: relative;
+        top: 6rem;
+        left: 3rem;
         @include respond(phone){
             transform: skewX(0);
         }

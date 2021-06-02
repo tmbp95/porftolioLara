@@ -139,6 +139,9 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
+.small-text {
+  font-size: 1.2rem; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -504,7 +507,7 @@ body {
 .composition {
   position: relative; }
   .composition__photo {
-    width: 30%;
+    width: 25%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 2px;
     position: absolute;
@@ -515,11 +518,11 @@ body {
       .composition__photo {
         float: left;
         position: relative;
-        width: 30.33333333%;
+        width: 25.33333333%;
         box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
     .composition__photo--p1 {
       left: 20%;
-      top: -2rem; }
+      top: -3rem; }
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p1 {
           left: 0%;
@@ -527,15 +530,15 @@ body {
           background-position: center; } }
     .composition__photo--p2 {
       right: 10%;
-      top: 3rem; }
+      top: -1rem; }
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p2 {
           left: 5%;
           top: 0;
           transform: scale(1); } }
     .composition__photo--p3 {
-      left: 40%;
-      top: 10rem; }
+      left: 43%;
+      top: 3rem; }
       @media only screen and (max-width: 56.25em) {
         .composition__photo--p3 {
           top: 0;
@@ -833,27 +836,72 @@ body {
       hyphens: auto; } }
 
 .story {
-  width: 80%;
+  width: 40%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem #999999;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
-  padding: 3rem;
-  padding-left: 7rem;
-  font-size: 1.8rem; }
-  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    .story {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); } }
+  padding: 2rem;
+  padding-left: 6rem;
+  font-size: 1.8rem;
+  display: flex; }
+  .story-s {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 2rem; }
+  .story-small {
+    width: 30%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem #999999;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    padding: 2rem;
+    padding-left: 6rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center; }
+    @media only screen and (max-width: 56.25em) {
+      .story-small {
+        width: 48%;
+        padding: 2rem;
+        padding-left: 5rem; } }
+    .story-small__shape {
+      width: 8rem;
+      height: 8rem;
+      background: red;
+      float: left;
+      position: relative;
+      left: -4rem; }
+    .story-small__img {
+      background-position: center center;
+      width: 8rem;
+      height: 8rem;
+      transition: all 0.5s;
+      backface-visibility: hidden; }
+    .story-small__text {
+      left: -1rem; }
+      @media only screen and (max-width: 37.5em) {
+        .story-small__text {
+          transform: skewX(0); } }
+    .story-small__caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 20%);
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.5s;
+      backface-visibility: hidden; }
   @media only screen and (max-width: 56.25em) {
     .story {
       width: 100%;
-      padding: 4rem;
-      padding-left: 7rem; }
-      @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-        .story {
-          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } } }
+      padding: 2rem;
+      padding-left: 5rem; } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -870,9 +918,13 @@ body {
     transform: translateX(-4rem) scale(1.4);
     transition: all 0.5s;
     backface-visibility: hidden; }
-  @media only screen and (max-width: 37.5em) {
-    .story__text {
-      transform: skewX(0); } }
+  .story__text {
+    position: relative;
+    top: 6rem;
+    left: 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -1060,6 +1112,8 @@ body {
     cursor: pointer;
     z-index: 20;
     display: flex; }
+    .header__logo-button a {
+      text-decoration: none; }
     .header__logo-button--image {
       width: 2rem;
       height: 1.91rem; }
